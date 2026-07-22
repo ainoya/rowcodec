@@ -1,0 +1,65 @@
+{
+  "name": "rowcodec",
+  "version": "0.1.0",
+  "description": "Map flat ORM rows (left joins) into nested, aggregated domain objects. ORM-agnostic, functional, fully type-inferred.",
+  "keywords": [
+    "orm",
+    "kysely",
+    "drizzle",
+    "prisma",
+    "sql",
+    "join",
+    "nest",
+    "aggregate",
+    "mapper",
+    "row",
+    "typescript"
+  ],
+  "license": "MIT",
+  "author": "ainoya",
+  "homepage": "https://github.com/ainoya/rowcodec#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ainoya/rowcodec.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ainoya/rowcodec/issues"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "pnpm run build"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "ajv": "^8.20.0",
+    "better-sqlite3": "^12.11.1",
+    "drizzle-orm": "^0.45.2",
+    "kysely": "^0.29.4",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8",
+    "zod": "^4.4.3"
+  },
+  "packageManager": "pnpm@9.14.2"
+}
