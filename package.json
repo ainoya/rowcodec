@@ -34,10 +34,19 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    }
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "files": [
     "dist"
@@ -48,14 +57,17 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
-    "prepublishOnly": "pnpm run build"
+    "lint:publish": "publint && attw --pack .",
+    "prepublishOnly": "pnpm run build && pnpm run lint:publish"
   },
   "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.5",
     "@types/better-sqlite3": "^7.6.13",
     "ajv": "^8.20.0",
     "better-sqlite3": "^12.11.1",
     "drizzle-orm": "^0.45.2",
     "kysely": "^0.29.4",
+    "publint": "^0.3.24",
     "tsup": "^8.3.5",
     "typescript": "^5.7.2",
     "vitest": "^2.1.8",

@@ -1,5 +1,9 @@
 # rowcodec
 
+[![npm](https://img.shields.io/npm/v/rowcodec.svg)](https://www.npmjs.com/package/rowcodec)
+[![CI](https://github.com/ainoya/rowcodec/actions/workflows/ci.yml/badge.svg)](https://github.com/ainoya/rowcodec/actions/workflows/ci.yml)
+[![license](https://img.shields.io/npm/l/rowcodec.svg)](./LICENSE)
+
 Map flat rows returned by any ORM/query builder — the denormalized product of
 `LEFT JOIN`s — into **nested, aggregated domain objects**. ORM-agnostic,
 functional (no classes), and fully type-inferred.
