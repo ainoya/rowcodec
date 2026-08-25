@@ -1,8 +1,11 @@
 # rowcodec
 
-[![npm](https://img.shields.io/npm/v/rowcodec.svg)](https://www.npmjs.com/package/rowcodec)
+[![npm version](https://img.shields.io/npm/v/rowcodec?logo=npm)](https://www.npmjs.com/package/rowcodec)
+[![npm downloads](https://img.shields.io/npm/dm/rowcodec)](https://www.npmjs.com/package/rowcodec)
+[![bundle size](https://img.shields.io/bundlejs/size/rowcodec)](https://bundlejs.com/?q=rowcodec)
+[![types](https://img.shields.io/npm/types/rowcodec)](https://arethetypeswrong.github.io/?p=rowcodec)
 [![CI](https://github.com/ainoya/rowcodec/actions/workflows/ci.yml/badge.svg)](https://github.com/ainoya/rowcodec/actions/workflows/ci.yml)
-[![license](https://img.shields.io/npm/l/rowcodec.svg)](./LICENSE)
+[![license](https://img.shields.io/npm/l/rowcodec)](./LICENSE)
 
 Map flat rows returned by any ORM/query builder — the denormalized product of
 `LEFT JOIN`s — into **nested, aggregated domain objects**. ORM-agnostic,
@@ -24,8 +27,19 @@ Hand-writing the grouping/decoding for that is fiddly and easy to get wrong.
 
 ```sh
 npm install rowcodec
-# or: pnpm add rowcodec
+# or: pnpm add rowcodec / yarn add rowcodec / bun add rowcodec
 ```
+
+Zero runtime dependencies. Ships ESM and CJS builds with separate type
+declarations for each, so `import` and `require` both resolve correctly under
+`node16`/`nodenext` module resolution. Requires Node 18 or later; works in any
+bundler and in the browser.
+
+Every release is published from CI through [npm trusted
+publishing](https://docs.npmjs.com/trusted-publishers/), so each version carries
+a [provenance
+attestation](https://docs.npmjs.com/generating-provenance-statements) linking it
+to the exact commit and workflow run that built it.
 
 ## Usage
 
