@@ -1,6 +1,6 @@
 {
   "name": "rowcodec",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Map flat ORM rows (left joins) into nested, aggregated domain objects. ORM-agnostic, functional, fully type-inferred.",
   "keywords": [
     "orm",
