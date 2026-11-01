@@ -3,34 +3,28 @@
   "extends": [
     "config:recommended",
     ":dependencyDashboard",
-    ":semanticCommits"
+    ":semanticCommits",
+    "group:all"
   ],
   "timezone": "Asia/Tokyo",
-  "schedule": ["before 5am on the first day of the month"],
+  "schedule": ["* 0-5 1 * *"],
   "prConcurrentLimit": 5,
   "prHourlyLimit": 2,
   "labels": ["dependencies"],
   "rangeStrategy": "bump",
   "lockFileMaintenance": {
     "enabled": true,
-    "schedule": ["before 5am on the first day of the month"]
+    "schedule": ["* 0-5 1 * *"]
   },
   "minimumReleaseAge": "14 days",
   "internalChecksFilter": "strict",
-  "packageRules": [
-    {
-      "description": "Group all non-major dev dependency updates into one monthly PR",
-      "matchDepTypes": ["devDependencies"],
-      "matchUpdateTypes": ["minor", "patch"],
-      "groupName": "dev dependencies (non-major)"
-    }
-  ],
   "vulnerabilityAlerts": {
     "enabled": true,
     "labels": ["security"],
     "schedule": ["at any time"],
     "minimumReleaseAge": "0 days",
-    "prCreation": "immediate"
+    "prCreation": "immediate",
+    "groupName": null
   },
   "osvVulnerabilityAlerts": true
 }
